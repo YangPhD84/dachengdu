@@ -9,3 +9,5 @@
 编写人：杨梦云
 
 时间：2023年3月1日
+
+![课程目标比例](https://user-images.githubusercontent.com/45998351/222317346-d8e64da8-f111-4bb4-bed5-54b9f257106a.png)
