@@ -1,9 +1,10 @@
 % 说明：
-% 1.本程序一键解决老师们计算课程达成度的问题，3秒内出结果！
+% 1.本程序可一键解决老师们计算课程达成度的问题，供参考
 % 2.用于邵阳学院理学院数学与应用数学专业师范认证的课程目标达成度计算和各目标的达成度散点图绘制，同理也可用于工程认证的达成度计算。
 % 3.demo中的学生信息和成绩数据为随机生成。根据不同课程，需替换第1、2步中的“课程目标比例矩阵Ratio_Matrix”、“demo过程考核成绩.xls”、“demo卷面课程目标成绩.xls”、“卷面上各课程目标占的分值分”。
 % 编写人：杨梦云
 % 时间：2023年3月1日
+
 %% 1.输入教学大纲中课程目标比例矩阵 【需替换】
 clear
 Ratio_Matrix=[
@@ -20,12 +21,13 @@ str2=importdata(num2str('demo卷面课程目标成绩.xls'));
 juanmian_original=str2.data.Sheet1(:,3:end);% 卷面上每个学生各课程目标的真实得分，如某一课程目标共20分，得18分。用于综合成绩（Combined_Score）的计算。
 juanmian_100=round(juanmian_original./[46,48,6,0,100].*100);% 卷面上课程目标1占46分、课程目标2占48分、课程目标3占6分、课程目标4不占分，合计100分。用于各课程目标达成度计算。
                                                             % juanmian_100表示转换成百分制的各课程目标的真实得分，如上情况得18分，将转成18/20*100=90分。
-
+all=[guocheng,juanmian_100];
 %% 3.计算学生的综合成绩
 fprintf('平时考核占比：%d%%, 考试占比：%d%% \n',floor(sum(sum(Ratio_Matrix(:,1:end-1)))*100),floor(sum(Ratio_Matrix(:,end))*100));
 [n1,n2]=size(guocheng);
 pingshi=zeros(n1,1);
-for i=1:12 %Ratio_Matrix的前三列共由12个平时成绩的比例数值组成,guocheng(:,i)是逐个对应具体的平时成绩。
+[l1,l2]=size(Ratio_Matrix(:,1:end-1));
+for i=1:(l1*l2) %Ratio_Matrix的前三列共由12个平时成绩的比例数值组成,guocheng(:,i)是逐个对应具体的平时成绩。
     pingshi=pingshi+guocheng(:,i)*Ratio_Matrix(i);
 end
 pingshi=round(pingshi);%平时成绩四舍五入取整。
@@ -63,10 +65,15 @@ for i=1:length(bad1)
 end
 
 %% 5.计算课程各分目标达成度和总达成度
-Achievement_Target1=(guocheng(:,1)*Ratio_Matrix(1,1)+juanmian_100(:,1)*Ratio_Matrix(1,4))/(sum(Ratio_Matrix(1,:))*100);%达成度计算公式。
-Achievement_Target2=(guocheng(:,2)*Ratio_Matrix(2,1)+guocheng(:,6)*Ratio_Matrix(2,2)+juanmian_100(:,2)*Ratio_Matrix(2,4))/(sum(Ratio_Matrix(2,:))*100);
-Achievement_Target3=(guocheng(:,11)*Ratio_Matrix(3,3)+juanmian_100(:,3)*Ratio_Matrix(3,4))/(sum(Ratio_Matrix(3,:))*100);
-Achievement_Target4=(guocheng(:,8)*Ratio_Matrix(4,2)+guocheng(:,12)*Ratio_Matrix(4,3))/(sum(Ratio_Matrix(4,:))*100);
+for k=1:num
+Target=zeros(n,1);
+index_col=find(Ratio_Matrix(k,:)~=0);
+for i=1:length(index_col)
+Target=Target+all(:,sub2ind(size(Ratio_Matrix), k,index_col(i)))*Ratio_Matrix(k,index_col(i));
+end
+aaa=['Achievement_Target' num2str(k) '=Target/(sum(Ratio_Matrix(' num2str(k) ',:))*100);'];
+eval(aaa);
+end
 for i=1:num
     fprintf(['课程目标',num2str(i)])
     fprintf('的达成度为: %4.2f \n', mean(eval(['Achievement_Target',num2str(i)])));
@@ -96,11 +103,11 @@ for i=1:num
     title({['课程目标' ,num2str(i), '达成分布图（定量分析）']; [   ]})
 end
 
-%% 8.绘制所有学生的课程总目标达成度散点图 【自选】
-% figure
-% plot(1:length(Achievement_Target1),(Achievement_Target1+Achievement_Target2+Achievement_Target3+Achievement_Target4)/4,'bo','MarkerFaceColor',[61,133,198]/255)
-% axis([0 length(Achievement_Target1) 0 1]);
-% grid on
-% hold on
-% plot([0 length(Achievement_Target1)], [0.7 0.7], 'r-')
-% title({['整体课程目标达成分布图（定量分析）']; [   ]})
+% %% 8.绘制所有学生的课程总目标达成度散点图 【自选】
+% % figure
+% % plot(1:length(Achievement_Target1),(Achievement_Target1+Achievement_Target2+Achievement_Target3+Achievement_Target4)/4,'bo','MarkerFaceColor',[61,133,198]/255)
+% % axis([0 length(Achievement_Target1) 0 1]);
+% % grid on
+% % hold on
+% % plot([0 length(Achievement_Target1)], [0.7 0.7], 'r-')
+% % title({['整体课程目标达成分布图（定量分析）']; [   ]})
