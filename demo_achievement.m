@@ -1,70 +1,71 @@
-% ËµÃ÷£º
-% 1.±¾³ÌĞò¿ÉÒ»¼ü½â¾öÀÏÊ¦ÃÇ¼ÆËã¿Î³Ì´ï³É¶ÈµÄÎÊÌâ£¬¹©²Î¿¼
-% 2.ÓÃÓÚÉÛÑôÑ§ÔºÀíÑ§ÔºÊıÑ§ÓëÓ¦ÓÃÊıÑ§×¨ÒµÊ¦·¶ÈÏÖ¤µÄ¿Î³ÌÄ¿±ê´ï³É¶È¼ÆËãºÍ¸÷Ä¿±êµÄ´ï³É¶ÈÉ¢µãÍ¼»æÖÆ£¬Í¬ÀíÒ²¿ÉÓÃÓÚ¹¤³ÌÈÏÖ¤µÄ´ï³É¶È¼ÆËã¡£
-% 3.demoÖĞµÄÑ§ÉúĞÅÏ¢ºÍ³É¼¨Êı¾İÎªËæ»úÉú³É¡£¸ù¾İ²»Í¬¿Î³Ì£¬ĞèÌæ»»µÚ1¡¢2²½ÖĞµÄ¡°¿Î³ÌÄ¿±ê±ÈÀı¾ØÕóRatio_Matrix¡±¡¢¡°demo¹ı³Ì¿¼ºË³É¼¨.xls¡±¡¢¡°demo¾íÃæ¿Î³ÌÄ¿±ê³É¼¨.xls¡±¡¢¡°¾íÃæÉÏ¸÷¿Î³ÌÄ¿±êÕ¼µÄ·ÖÖµ·Ö¡±¡£
-% ±àĞ´ÈË£ºÑîÃÎÔÆ
-% Ê±¼ä£º2023Äê3ÔÂ1ÈÕ
+% è¯´æ˜ï¼š
+% 1.æœ¬ç¨‹åºå¯ä¸€é”®å¿«é€Ÿè§£å†³è€å¸ˆä»¬è®¡ç®—è¯¾ç¨‹è¾¾æˆåº¦çš„é—®é¢˜ï¼Œä¾›å‚è€ƒ
+% 2.ç”¨äºé‚µé˜³å­¦é™¢ç†å­¦é™¢æ•°å­¦ä¸åº”ç”¨æ•°å­¦ä¸“ä¸šå¸ˆèŒƒè®¤è¯çš„è¯¾ç¨‹ç›®æ ‡è¾¾æˆåº¦è®¡ç®—å’Œå„ç›®æ ‡çš„è¾¾æˆåº¦æ•£ç‚¹å›¾ç»˜åˆ¶ã€‚
+% 3.demoä¸­çš„å­¦ç”Ÿä¿¡æ¯å’Œæˆç»©æ•°æ®ä¸ºéšæœºç”Ÿæˆã€‚æ ¹æ®ä¸åŒè¯¾ç¨‹ï¼Œéœ€æ›¿æ¢ç¬¬1ã€2æ­¥ä¸­çš„â€œè¯¾ç¨‹ç›®æ ‡æ¯”ä¾‹çŸ©é˜µRatio_Matrixâ€ã€â€œdemoè¿‡ç¨‹è€ƒæ ¸æˆç»©.xlsâ€ã€â€œdemoå·é¢è¯¾ç¨‹ç›®æ ‡æˆç»©.xlsâ€ã€â€œå·é¢ä¸Šå„è¯¾ç¨‹ç›®æ ‡å çš„åˆ†å€¼â€ã€‚
+% 4.Excelè¡¨æ ¼ä¸­æ›¿æ¢çš„æˆç»©è¦å’Œdemoæˆç»©å½¢å¼ä¿æŒä¸€è‡´ï¼Œå¹¶ä¸”æ•°å­—è¦æ˜¯æ•°å€¼ç±»å‹ã€‚
+% ç¼–å†™äººï¼šæ¨æ¢¦äº‘
+% æ—¶é—´ï¼š2023å¹´3æœˆ1æ—¥
 
-%% 1.ÊäÈë½ÌÑ§´ó¸ÙÖĞ¿Î³ÌÄ¿±ê±ÈÀı¾ØÕó ¡¾ĞèÌæ»»¡¿
+%% 1.è¾“å…¥æ•™å­¦å¤§çº²ä¸­è¯¾ç¨‹ç›®æ ‡æ¯”ä¾‹çŸ©é˜µ ã€éœ€æ›¿æ¢ã€‘
 clear
 Ratio_Matrix=[
     10	0	0	35
     10	5	0	15
     0	0	5	5
-    0	10	5	0]/100;%ĞĞ±íÊ¾4¸ö¿Î³ÌÄ¿±ê£¬ÁĞ±íÊ¾4¸ö¿¼ºËÏî£¨Ç°3ÁĞÊÇÆ½Ê±¿¼ºËÏî£¬µÚ4ÁĞÎª¿¼ÊÔÏî£©¡£
+    0	10	5	0]/100;%è¡Œè¡¨ç¤º4ä¸ªè¯¾ç¨‹ç›®æ ‡ï¼Œåˆ—è¡¨ç¤º4ä¸ªè€ƒæ ¸é¡¹ï¼ˆå‰3åˆ—æ˜¯å¹³æ—¶è€ƒæ ¸é¡¹ï¼Œç¬¬4åˆ—ä¸ºè€ƒè¯•é¡¹ï¼‰ã€‚
 [num,num2]=size(Ratio_Matrix);
 
-%% 2.¼ÓÔØ¹ı³Ì³É¼¨ºÍ¾íÃæ³É¼¨ ¡¾ĞèÌæ»»¡¿
-str1=importdata(num2str('demo¹ı³Ì¿¼ºË³É¼¨.xls'));
-guocheng=str1.data.Sheet1(:,3:end);% ¸÷Ïî¹ı³Ì³É¼¨¶¼ÊÇ°Ù·ÖÖÆ·ÖÊı¡£
-str2=importdata(num2str('demo¾íÃæ¿Î³ÌÄ¿±ê³É¼¨.xls'));
-juanmian_original=str2.data.Sheet1(:,3:end);% ¾íÃæÉÏÃ¿¸öÑ§Éú¸÷¿Î³ÌÄ¿±êµÄÕæÊµµÃ·Ö£¬ÈçÄ³Ò»¿Î³ÌÄ¿±ê¹²20·Ö£¬µÃ18·Ö¡£ÓÃÓÚ×ÛºÏ³É¼¨£¨Combined_Score£©µÄ¼ÆËã¡£
-juanmian_100=round(juanmian_original./[46,48,6,0,100].*100);% ¾íÃæÉÏ¿Î³ÌÄ¿±ê1Õ¼46·Ö¡¢¿Î³ÌÄ¿±ê2Õ¼48·Ö¡¢¿Î³ÌÄ¿±ê3Õ¼6·Ö¡¢¿Î³ÌÄ¿±ê4²»Õ¼·Ö£¬ºÏ¼Æ100·Ö¡£ÓÃÓÚ¸÷¿Î³ÌÄ¿±ê´ï³É¶È¼ÆËã¡£
-                                                            % juanmian_100±íÊ¾×ª»»³É°Ù·ÖÖÆµÄ¸÷¿Î³ÌÄ¿±êµÄÕæÊµµÃ·Ö£¬ÈçÉÏÇé¿öµÃ18·Ö£¬½«×ª³É18/20*100=90·Ö¡£
+%% 2.åŠ è½½è¿‡ç¨‹æˆç»©å’Œå·é¢æˆç»© ã€éœ€æ›¿æ¢ã€‘
+str1=importdata(num2str('demoè¿‡ç¨‹è€ƒæ ¸æˆç»©.xls'));
+guocheng=str1.data.Sheet1(:,3:end);% å„é¡¹è¿‡ç¨‹æˆç»©éƒ½æ˜¯ç™¾åˆ†åˆ¶åˆ†æ•°ã€‚
+str2=importdata(num2str('demoå·é¢è¯¾ç¨‹ç›®æ ‡æˆç»©.xls'));
+juanmian_original=str2.data.Sheet1(:,3:end);% å·é¢ä¸Šæ¯ä¸ªå­¦ç”Ÿå„è¯¾ç¨‹ç›®æ ‡çš„çœŸå®å¾—åˆ†ï¼Œå¦‚æŸä¸€è¯¾ç¨‹ç›®æ ‡å…±20åˆ†ï¼Œå¾—18åˆ†ã€‚ç”¨äºç»¼åˆæˆç»©ï¼ˆCombined_Scoreï¼‰çš„è®¡ç®—ã€‚
+juanmian_100=round(juanmian_original./[46,48,6,0,100].*100);% å·é¢ä¸Šè¯¾ç¨‹ç›®æ ‡1å 46åˆ†ã€è¯¾ç¨‹ç›®æ ‡2å 48åˆ†ã€è¯¾ç¨‹ç›®æ ‡3å 6åˆ†ã€è¯¾ç¨‹ç›®æ ‡4ä¸å åˆ†ï¼Œåˆè®¡100åˆ†ã€‚ç”¨äºå„è¯¾ç¨‹ç›®æ ‡è¾¾æˆåº¦è®¡ç®—ã€‚
+                                                            % juanmian_100è¡¨ç¤ºè½¬æ¢æˆç™¾åˆ†åˆ¶çš„å„è¯¾ç¨‹ç›®æ ‡çš„çœŸå®å¾—åˆ†ï¼Œå¦‚ä¸Šæƒ…å†µå¾—18åˆ†ï¼Œå°†è½¬æˆ18/20*100=90åˆ†ã€‚
 all=[guocheng,juanmian_100];
-%% 3.¼ÆËãÑ§ÉúµÄ×ÛºÏ³É¼¨
-fprintf('Æ½Ê±¿¼ºËÕ¼±È£º%d%%, ¿¼ÊÔÕ¼±È£º%d%% \n',floor(sum(sum(Ratio_Matrix(:,1:end-1)))*100),floor(sum(Ratio_Matrix(:,end))*100));
+%% 3.è®¡ç®—å­¦ç”Ÿçš„ç»¼åˆæˆç»©
+fprintf('å¹³æ—¶è€ƒæ ¸å æ¯”ï¼š%d%%, è€ƒè¯•å æ¯”ï¼š%d%% \n',floor(sum(sum(Ratio_Matrix(:,1:end-1)))*100),floor(sum(Ratio_Matrix(:,end))*100));
 [n1,n2]=size(guocheng);
 pingshi=zeros(n1,1);
 [l1,l2]=size(Ratio_Matrix(:,1:end-1));
-for i=1:(l1*l2) %Ratio_MatrixµÄÇ°ÈıÁĞ¹²ÓÉ12¸öÆ½Ê±³É¼¨µÄ±ÈÀıÊıÖµ×é³É,guocheng(:,i)ÊÇÖğ¸ö¶ÔÓ¦¾ßÌåµÄÆ½Ê±³É¼¨¡£
+for i=1:(l1*l2) %Ratio_Matrixçš„å‰ä¸‰åˆ—å…±ç”±12ä¸ªå¹³æ—¶æˆç»©çš„æ¯”ä¾‹æ•°å€¼ç»„æˆ,guocheng(:,i)æ˜¯é€ä¸ªå¯¹åº”å…·ä½“çš„å¹³æ—¶æˆç»©ã€‚
     pingshi=pingshi+guocheng(:,i)*Ratio_Matrix(i);
 end
-pingshi=round(pingshi);%Æ½Ê±³É¼¨ËÄÉáÎåÈëÈ¡Õû¡£
-Combined_Score=round(pingshi+juanmian_original(:,end)*sum(Ratio_Matrix(:,4)));% juanmian_original(:,end)ÊÇ¾íÃæ×Ü³É¼¨£¬Ratio_Matrix(:,4)±íÊ¾¾íÃæ¹²Õ¼µÄ±ÈÀı£¬ÕâÀïÊÇ55%¡£
+pingshi=round(pingshi);%å¹³æ—¶æˆç»©å››èˆäº”å…¥å–æ•´ã€‚
+Combined_Score=round(pingshi+juanmian_original(:,end)*sum(Ratio_Matrix(:,4)));% juanmian_original(:,end)æ˜¯å·é¢æ€»æˆç»©ï¼ŒRatio_Matrix(:,4)è¡¨ç¤ºå·é¢å…±å çš„æ¯”ä¾‹ï¼Œè¿™é‡Œæ˜¯55%ã€‚
 n=length(Combined_Score);
 a1=sum(Combined_Score>89);          %90~
 a2=sum(Combined_Score>79)-a1 ;      %80~89
 a3=sum(Combined_Score>69)-a1-a2 ;   %70~79
 a4=sum(Combined_Score>59)-a1-a2-a3 ;%60~69
 a5=sum(Combined_Score<60) ;         %0~59
-fprintf('---------¸÷·ÖÊı¶ÎµÄ³É¼¨·Ö²¼£º\n')
-fprintf('[90,100]µÄÈËÊı: %d£¬°Ù·Ö±È£º%4.2f%%\n',a1,a1/n*100)
-fprintf('[80,90)µÄÈËÊı: %d£¬°Ù·Ö±È£º%4.2f%%\n',a2,a2/n*100)
-fprintf('[70,80)µÄÈËÊı: %d£¬°Ù·Ö±È£º%4.2f%%\n',a3,a3/n*100)
-fprintf('[60,70)µÄÈËÊı: %d£¬°Ù·Ö±È£º%4.2f%%\n',a4,a4/n*100)
-fprintf('[0,60)µÄÈËÊı: %d£¬°Ù·Ö±È£º%4.2f%%\n',a5,a5/n*100)
-fprintf('×ÜÈËÊı: %d\n',a1+a2+a3+a4+a5)
-fprintf('Æ½¾ù·Ö: %4.2f\n',sum(Combined_Score)/n)
-fprintf('×î¸ß·Ö: %d£¬×îµÍ·Ö: %d\n',max(Combined_Score),min(Combined_Score))
+fprintf('---------å„åˆ†æ•°æ®µçš„æˆç»©åˆ†å¸ƒï¼š\n')
+fprintf('[90,100]çš„äººæ•°: %dï¼Œç™¾åˆ†æ¯”ï¼š%4.2f%%\n',a1,a1/n*100)
+fprintf('[80,90)çš„äººæ•°: %dï¼Œç™¾åˆ†æ¯”ï¼š%4.2f%%\n',a2,a2/n*100)
+fprintf('[70,80)çš„äººæ•°: %dï¼Œç™¾åˆ†æ¯”ï¼š%4.2f%%\n',a3,a3/n*100)
+fprintf('[60,70)çš„äººæ•°: %dï¼Œç™¾åˆ†æ¯”ï¼š%4.2f%%\n',a4,a4/n*100)
+fprintf('[0,60)çš„äººæ•°: %dï¼Œç™¾åˆ†æ¯”ï¼š%4.2f%%\n',a5,a5/n*100)
+fprintf('æ€»äººæ•°: %d\n',a1+a2+a3+a4+a5)
+fprintf('å¹³å‡åˆ†: %4.2f\n',sum(Combined_Score)/n)
+fprintf('æœ€é«˜åˆ†: %dï¼Œæœ€ä½åˆ†: %d\n',max(Combined_Score),min(Combined_Score))
 
-%% 4.Êä³öÄ³Ò»³É¼¨¶ÎµÄÑ§ÉúĞÅÏ¢
-fprintf('---------90·ÖÒÔÉÏµÄÑ§ºÅºÍĞÕÃû£º\n')
+%% 4.è¾“å‡ºæŸä¸€æˆç»©æ®µçš„å­¦ç”Ÿä¿¡æ¯
+fprintf('---------90åˆ†ä»¥ä¸Šçš„å­¦å·å’Œå§“åï¼š\n')
 good=find(Combined_Score>89)';
 good1=str1.data.Sheet1(good,1);
 good2=str1.textdata.Sheet1(good+1,2);
 for i=1:length(good1)
-    fprintf('%d, %s, ×ÛºÏµÃ·Ö£º%d [Æ½Ê±ÕÛËã%d·Ö£¬¾íÃæ³É¼¨%d·Ö]\n', good1(i),good2{i},Combined_Score(good(i)),pingshi(good(i)),juanmian_original(good(i),end))
+    fprintf('%d, %s, ç»¼åˆå¾—åˆ†ï¼š%d [å¹³æ—¶æŠ˜ç®—%dåˆ†ï¼Œå·é¢æˆç»©%dåˆ†]\n', good1(i),good2{i},Combined_Score(good(i)),pingshi(good(i)),juanmian_original(good(i),end))
 end
-fprintf('---------60·ÖÒÔÏÂµÄÑ§ºÅ£º\n')
+fprintf('---------60åˆ†ä»¥ä¸‹çš„å­¦å·ï¼š\n')
 bad=find(Combined_Score<60)';
 bad1=str1.data.Sheet1(bad,1);
 bad2=str1.textdata.Sheet1(bad+1,2);
 for i=1:length(bad1)
-    fprintf('%d, %s, ×ÛºÏµÃ·Ö£º%d [Æ½Ê±ÕÛËã%d·Ö£¬¾íÃæ³É¼¨%d·Ö]\n', bad1(i),bad2{i},Combined_Score(bad(i)),pingshi(bad(i)),juanmian_original(bad(i),end))
+    fprintf('%d, %s, ç»¼åˆå¾—åˆ†ï¼š%d [å¹³æ—¶æŠ˜ç®—%dåˆ†ï¼Œå·é¢æˆç»©%dåˆ†]\n', bad1(i),bad2{i},Combined_Score(bad(i)),pingshi(bad(i)),juanmian_original(bad(i),end))
 end
 
-%% 5.¼ÆËã¿Î³Ì¸÷·ÖÄ¿±ê´ï³É¶ÈºÍ×Ü´ï³É¶È
+%% 5.è®¡ç®—è¯¾ç¨‹å„åˆ†ç›®æ ‡è¾¾æˆåº¦å’Œæ€»è¾¾æˆåº¦
 for k=1:num
 Target=zeros(n,1);
 index_col=find(Ratio_Matrix(k,:)~=0);
@@ -75,24 +76,24 @@ aaa=['Achievement_Target' num2str(k) '=Target/(sum(Ratio_Matrix(' num2str(k) ',:
 eval(aaa);
 end
 for i=1:num
-    fprintf(['¿Î³ÌÄ¿±ê',num2str(i)])
-    fprintf('µÄ´ï³É¶ÈÎª: %4.2f \n', mean(eval(['Achievement_Target',num2str(i)])));
+    fprintf(['è¯¾ç¨‹ç›®æ ‡',num2str(i)])
+    fprintf('çš„è¾¾æˆåº¦ä¸º: %4.2f \n', mean(eval(['Achievement_Target',num2str(i)])));
 end
 Target1234=[mean(Achievement_Target1),mean(Achievement_Target2),mean(Achievement_Target3),mean(Achievement_Target4)];
-fprintf('---------¿Î³ÌÄ¿±ê×Ü´ï³É¶ÈÎª: %4.2f \n', mean(Target1234));
+fprintf('---------è¯¾ç¨‹ç›®æ ‡æ€»è¾¾æˆåº¦ä¸º: %4.2f \n', mean(Target1234));
 
-%% 6.»æÖÆ¿Î³Ì¸÷·ÖÄ¿±ê´ï³É¶ÈÖù×´Í¼
+%% 6.ç»˜åˆ¶è¯¾ç¨‹å„åˆ†ç›®æ ‡è¾¾æˆåº¦æŸ±çŠ¶å›¾
 fx=bar(1:num,Target1234);
-set(gca,'XTickLabel',{'¿Î³ÌÄ¿±ê 1','¿Î³ÌÄ¿±ê 2','¿Î³ÌÄ¿±ê 3','¿Î³ÌÄ¿±ê 4'})
+set(gca,'XTickLabel',{'è¯¾ç¨‹ç›®æ ‡ 1','è¯¾ç¨‹ç›®æ ‡ 2','è¯¾ç¨‹ç›®æ ‡ 3','è¯¾ç¨‹ç›®æ ‡ 4'})
 set(fx,'FaceColor',[61,133,198]/255);
 ylim([0 1])
 set(gca,'Ygrid','on')
 for i = 1:length(Target1234)
     text(i,Target1234(i)+0.03,num2str(roundn(Target1234(i),-2)),'VerticalAlignment','middle','HorizontalAlignment','center','FontSize',10);
 end
-title({['¿Î³ÌÄ¿±êÆÀ¼Û´ï³ÉÖµ']; [   ]})
+title({['è¯¾ç¨‹ç›®æ ‡è¯„ä»·è¾¾æˆå€¼']; [   ]})
 
-%% 7.»æÖÆËùÓĞÑ§ÉúµÄ¿Î³Ì¸÷·ÖÄ¿±ê´ï³É¶ÈÉ¢µãÍ¼
+%% 7.ç»˜åˆ¶æ‰€æœ‰å­¦ç”Ÿçš„è¯¾ç¨‹å„åˆ†ç›®æ ‡è¾¾æˆåº¦æ•£ç‚¹å›¾
 for i=1:num
     figure
     plot(1:length(Achievement_Target1),eval(['Achievement_Target',num2str(i)]),'bo','MarkerFaceColor',[61,133,198]/255)
@@ -100,14 +101,14 @@ for i=1:num
     grid on
     hold on
     plot([0 length(Achievement_Target1)], [0.7 0.7], 'r-')
-    title({['¿Î³ÌÄ¿±ê' ,num2str(i), '´ï³É·Ö²¼Í¼£¨¶¨Á¿·ÖÎö£©']; [   ]})
+    title({['è¯¾ç¨‹ç›®æ ‡' ,num2str(i), 'è¾¾æˆåˆ†å¸ƒå›¾ï¼ˆå®šé‡åˆ†æï¼‰']; [   ]})
 end
 
-% %% 8.»æÖÆËùÓĞÑ§ÉúµÄ¿Î³Ì×ÜÄ¿±ê´ï³É¶ÈÉ¢µãÍ¼ ¡¾×ÔÑ¡¡¿
+% %% 8.ç»˜åˆ¶æ‰€æœ‰å­¦ç”Ÿçš„è¯¾ç¨‹æ€»ç›®æ ‡è¾¾æˆåº¦æ•£ç‚¹å›¾ ã€è‡ªé€‰ã€‘
 % % figure
 % % plot(1:length(Achievement_Target1),(Achievement_Target1+Achievement_Target2+Achievement_Target3+Achievement_Target4)/4,'bo','MarkerFaceColor',[61,133,198]/255)
 % % axis([0 length(Achievement_Target1) 0 1]);
 % % grid on
 % % hold on
 % % plot([0 length(Achievement_Target1)], [0.7 0.7], 'r-')
-% % title({['ÕûÌå¿Î³ÌÄ¿±ê´ï³É·Ö²¼Í¼£¨¶¨Á¿·ÖÎö£©']; [   ]})
+% % title({['æ•´ä½“è¯¾ç¨‹ç›®æ ‡è¾¾æˆåˆ†å¸ƒå›¾ï¼ˆå®šé‡åˆ†æï¼‰']; [   ]})
